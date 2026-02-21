@@ -51,7 +51,7 @@ Because share values can be extremely large, the implementation uses **BigInt ar
 
 ---
 
-## 4. How to Run
+## How to Run
 
 ```bash
 node solver.js
@@ -65,7 +65,7 @@ input.json
 
 ---
 
-## 5. Output
+##  Output
 
 ```
 TestCase 1: 3
@@ -74,7 +74,7 @@ TestCase 2: 2561871836135835
 
 ---
 
-## 6. Complexity
+## Complexity
 
 Time Complexity: **O(k²)**
 Space Complexity: **O(k)**
@@ -83,7 +83,7 @@ This is optimal for direct polynomial reconstruction.
 
 ---
 
-## 7. Why This Implementation Stands Out
+##  Why This Implementation Stands Out
 
 * Robust handling of mixed-base inputs
 * Cryptography-aligned mathematical reconstruction
