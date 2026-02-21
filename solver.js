@@ -11,7 +11,11 @@ function baseToBigInt(value, base) {
     const b = BigInt(base);
 
     for (const ch of value.toLowerCase()) {
-        result = result * b + BigInt(digits.indexOf(ch));
+        const d = digits.indexOf(ch);
+        if (d === -1 || d >= base) {
+            throw new Error(`Invalid digit ${ch} for base ${base}`);
+        }
+        result = result * b + BigInt(d);
     }
     return result;
 }
@@ -23,14 +27,14 @@ for (const key in data) {
     if (key === "keys") continue;
 
     const x = BigInt(key);
-    const base = parseInt(data[key].base);
+    const base = Number(data[key].base);
     const y = baseToBigInt(data[key].value, base);
 
     points.push({ x, y });
 }
 
 /* ---------- SORT + TAKE k ---------- */
-points.sort((a, b) => (a.x > b.x ? 1 : -1));
+points.sort((a, b) => (a.x < b.x ? -1 : 1));
 points = points.slice(0, k);
 
 /* ---------- LAGRANGE f(0) ---------- */
@@ -47,11 +51,12 @@ function lagrangeAtZero(points) {
         for (let j = 0; j < points.length; j++) {
             if (i === j) continue;
 
-            let xj = points[j].x;
+            const xj = points[j].x;
             num *= -xj;
             den *= (xi - xj);
         }
 
+        // multiply before divide to keep integer precision
         result += (yi * num) / den;
     }
 
