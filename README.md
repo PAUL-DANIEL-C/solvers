@@ -74,7 +74,7 @@ TestCase 2: 2561871836135835
 
 ---
 
-## ⏱ Complexity
+## 6. Complexity
 
 Time Complexity: **O(k²)**
 Space Complexity: **O(k)**
@@ -83,7 +83,7 @@ This is optimal for direct polynomial reconstruction.
 
 ---
 
-## 🌟 Why This Implementation Stands Out
+## 7. Why This Implementation Stands Out
 
 * Robust handling of mixed-base inputs
 * Cryptography-aligned mathematical reconstruction
@@ -91,16 +91,6 @@ This is optimal for direct polynomial reconstruction.
 * Clean and minimal dependency-free design
 
 ---
-
-## 🔮 Future Improvements
-
-* Modular arithmetic version (true Shamir Secret Sharing)
-* Malicious share detection
-* Verifiable secret reconstruction
-* Web-based interactive visualization
-
----
-
-## 👨‍💻 Author
+## 👨‍💻Author
 
 Paul Daniel C
